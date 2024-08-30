@@ -9,7 +9,7 @@ export default async function Home() {
   const transformedData: TableRow[] = transformRawDataToTable(data);
   return (
     <div className={styles.container}>
-      <h1>HockeStack Test Table</h1>
+      <h1>HockeyStack Test Table</h1>
       <Table data={transformedData} />
     </div>
   );
