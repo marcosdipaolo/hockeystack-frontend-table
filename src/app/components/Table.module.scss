@@ -1,5 +1,5 @@
-$table-border-color: #e1e0e0;
-$blue: rgb(16, 123, 230);
+$table-border-color: #eaeaea;
+$blue: rgb(93, 149, 205);
 
 .outterContainer {
   font-size: .9rem;
@@ -23,7 +23,6 @@ $blue: rgb(16, 123, 230);
         height: 30px;
         width: 50px;
         border: 1px solid $table-border-color;
-        border-radius: 5px;
         text-align: center;
       }
     }
@@ -67,10 +66,9 @@ $blue: rgb(16, 123, 230);
     table.hockeyStack {
       border-collapse: separate;
       border-spacing: 0;
-      border-radius: 8px;
       background-color: #fff;
       table-layout: fixed;
-      border: 1px solid $table-border-color;
+      border-top: 1px solid $table-border-color;
 
       @media screen and (min-width: 1024px) {
         width: 100%;
@@ -78,11 +76,15 @@ $blue: rgb(16, 123, 230);
 
       thead {
         tr {
+          background-color: #f0f0f0;
+
           th {
             text-transform: uppercase;
             padding: 1rem;
             cursor: pointer;
             border-bottom: 1px solid $table-border-color;
+            color: #888;
+            font-size: .8rem;
 
             span {
               color: $blue;
@@ -106,8 +108,9 @@ $blue: rgb(16, 123, 230);
           text-wrap: wrap;
           word-wrap: break-word;
           text-align: center;
-          padding: 1.1rem;
+          padding: 1rem;
           min-width: 110px;
+          color: #677d92;
 
           a {
             text-decoration: none;

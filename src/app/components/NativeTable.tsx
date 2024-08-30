@@ -65,7 +65,7 @@ const NativeTable: FC<{ data: TableRow[] }> = ({ data }) => {
       <div className={styles.navControls}>
         <div className={styles.skipToPage}>
           <span style={{ display: isInputPageError ? "inline" : "none" }}>Invalid value. Defaulting to page 1.</span>
-          Skip to page: &nbsp;
+          Enter Page &nbsp;
           <input onChange={handlePageInput} type="number" />
         </div>
         <div className={styles.currentPage}>
