@@ -24,6 +24,10 @@ $blue: rgb(93, 149, 205);
         width: 50px;
         border: 1px solid $table-border-color;
         text-align: center;
+
+        &:focus-visible {
+          outline: none;
+        }
       }
     }
 

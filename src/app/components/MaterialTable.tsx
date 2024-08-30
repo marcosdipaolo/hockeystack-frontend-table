@@ -27,7 +27,13 @@ const MaterialTable: React.FC<{ data: TableRow[] }> = ({ data }) => {
         renderCell: (params) => (
           <a href={`https://${params.row.url.props.href}`} target='_blank'>{params.row.url.props.href}</a>
         ),
-        cellClassName: styles.materialUrl
+        cellClassName: styles.materialUrl,
+        sortComparator: (a, b) => {
+          let leftValue: JSX.Element = a.props.href;
+          let rightValue: JSX.Element = b.props.href;
+          const sorted = [leftValue, rightValue].sort();
+          return sorted[0] === leftValue ? -1 : 1;
+        }
       }
     }
     if (key === 'scroll' || key === 'bounce') {
