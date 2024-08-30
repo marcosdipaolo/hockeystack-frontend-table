@@ -1,0 +1,129 @@
+$table-border-color: #e1e0e0;
+$blue: rgb(16, 123, 230);
+
+.outterContainer {
+  font-size: .9rem;
+
+  div.navControls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: .5rem;
+
+    div.skipToPage {
+      position: relative;
+      top: .3rem;
+
+      span {
+        font-size: .8rem;
+        margin-right: 1rem;
+        color: red;
+      }
+
+      input {
+        height: 30px;
+        width: 50px;
+        border: 1px solid $table-border-color;
+        border-radius: 5px;
+        text-align: center;
+      }
+    }
+
+    div.currentPage {
+      font-size: 1rem;
+      width: 70px;
+      text-align: right;
+      margin-right: 2rem;
+      user-select: none;
+
+      span {
+        font-size: 2rem;
+        cursor: pointer;
+        color: $blue;
+
+        &.caretLeft {
+          margin-right: .5rem;
+        }
+
+        &.caretRight {
+          margin-left: .5rem;
+        }
+
+        &.currentPageValue {
+          position: relative;
+          bottom: .15rem;
+          font-size: 1.2rem;
+        }
+
+        &.hide {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .tableContainer {
+    overflow-x: auto;
+
+    table.hockeyStack {
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: 8px;
+      background-color: #fff;
+      table-layout: fixed;
+      border: 1px solid $table-border-color;
+
+      @media screen and (min-width: 1024px) {
+        width: 100%;
+      }
+
+      thead {
+        tr {
+          th {
+            text-transform: uppercase;
+            padding: 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid $table-border-color;
+
+            span {
+              color: $blue;
+            }
+
+            &.url {
+              width: 30%;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      tbody tr {
+        &:last-child td {
+          border: none;
+        }
+
+        td {
+          border-bottom: 1px solid $table-border-color;
+          text-wrap: wrap;
+          word-wrap: break-word;
+          text-align: center;
+          padding: 1.1rem;
+          min-width: 110px;
+
+          a {
+            text-decoration: none;
+            color: $blue;
+          }
+
+          &.url {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+
+.materialUrl a {
+  text-decoration: none;
+  color: $blue;
+}
