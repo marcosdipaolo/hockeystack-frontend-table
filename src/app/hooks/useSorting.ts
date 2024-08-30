@@ -16,9 +16,15 @@ const useSorting = (
   sortingField: keyof TableRow | "",
   sortDirection: "asc" | "desc" | ""
 ): TableRow[] => {
-  if (!sortingField || sortDirection === "" || sortingField === "url") return tableData;
+  if (!sortingField || sortDirection === "") return tableData;
 
   return [...tableData].sort((a, b) => {
+    if (sortingField === "url") {
+      let leftValue: JSX.Element = a[sortingField].props.href;
+      let rightValue: JSX.Element = b[sortingField].props.href;
+      const sorted = [leftValue, rightValue].sort();
+      return sortDirection === "asc" ? (sorted[0] === leftValue ? 1 : -1) : (sorted[0] === leftValue ? -1 : 1);
+    }
     let leftValue: string | number = a[sortingField];
     let rightValue: string | number = b[sortingField];
 
