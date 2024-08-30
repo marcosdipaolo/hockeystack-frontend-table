@@ -3,6 +3,9 @@
 npm i
 npm run dev
 ```
+## Data route URL
+If port `3000` is not available NextJS goes to the following `3001` and so on.  
+Please in that case edit the hardcoded url at `src/app/page.tsx:7` to de desired port, thanks.
 ## Possible Improvements
 
 Generally speaking this project could be improved with server side pagination and making the table more agnostic from the data shape. 
