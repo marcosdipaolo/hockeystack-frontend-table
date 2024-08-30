@@ -19,17 +19,17 @@ const NativeTable: FC<{ data: TableRow[] }> = ({ data }) => {
 
   const changeSortingDirection = useCallback((innerField: string) => {
     if (innerField !== sortingField) {
-      setSortingDirection("asc");
+      setSortingDirection("desc");
       return
     }
     switch (sortingDirection) {
       case "":
-        setSortingDirection("asc");
-        return;
-      case "asc":
         setSortingDirection("desc");
         return;
       case "desc":
+        setSortingDirection("asc");
+        return;
+      case "asc":
       default:
         setSortingDirection("");
     }
