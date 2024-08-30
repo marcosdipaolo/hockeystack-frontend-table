@@ -89,9 +89,11 @@ $blue: rgb(93, 149, 205);
             border-bottom: 1px solid $table-border-color;
             color: #888;
             font-size: .8rem;
+            position: relative;
 
             span {
-              color: $blue;
+              position: absolute;
+              top: 10px;
             }
 
             &.url {

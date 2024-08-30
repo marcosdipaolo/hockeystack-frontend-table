@@ -23,7 +23,7 @@ const useSorting = (
       let leftValue: JSX.Element = a[sortingField].props.href;
       let rightValue: JSX.Element = b[sortingField].props.href;
       const sorted = [leftValue, rightValue].sort();
-      return sortDirection === "asc" ? (sorted[0] === leftValue ? 1 : -1) : (sorted[0] === leftValue ? -1 : 1);
+      return sortDirection === "asc" ? (sorted[0] === leftValue ? -1 : 1) : (sorted[0] === leftValue ? 1 : -1);
     }
     let leftValue: string | number = a[sortingField];
     let rightValue: string | number = b[sortingField];

@@ -4,6 +4,8 @@ import usePagination from "../hooks/usePagination";
 import useSorting from "../hooks/useSorting";
 import { TableRow } from "../types";
 import classnames from "classnames";
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 const perPage = 10;
 
@@ -17,24 +19,24 @@ const NativeTable: FC<{ data: TableRow[] }> = ({ data }) => {
 
   const changeSortingDirection = useCallback((innerField: string) => {
     if (innerField !== sortingField) {
-      setSortingDirection("desc");
+      setSortingDirection("asc");
       return
     }
     switch (sortingDirection) {
       case "":
-        setSortingDirection("desc");
-        return;
-      case "desc":
         setSortingDirection("asc");
         return;
       case "asc":
+        setSortingDirection("desc");
+        return;
+      case "desc":
       default:
         setSortingDirection("");
     }
   }, [sortingDirection, sortingField])
 
   const resolveCaret = useCallback(() => {
-    return sortingDirection === "asc" ? "▲" : (sortingDirection === "" ? "" : "▼");
+    return sortingDirection === "asc" ? <KeyboardArrowUpIcon /> : (sortingDirection === "" ? "" : <KeyboardArrowDownIcon />);
   }, [sortingDirection]);
 
   const totalPages = useMemo(
