@@ -1,4 +1,8 @@
 # Hockeystack Front End Table Challenge
+```
+npm i
+npm run dev
+```
 ## Possible Improvements
 
 Generally speaking this project could be improved with server side pagination and making the table more agnostic from the data shape. 
